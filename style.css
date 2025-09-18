@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;font-weight:300;background:#111;color:#fff;display:flex;min-height:100vh}
+a{color:inherit}
+.sidebar{width:240px;background:#1f1f1f;padding:20px;position:fixed;left:-240px;top:0;bottom:0;transition:left .28s;z-index:1200}
+.sidebar.active{left:0}
+.sidebar img{max-width:100%;height:50px;object-fit:contain;margin-bottom:20px}
+.sidebar a{display:block;padding:10px;margin:6px 0;background:#262626;border-radius:6px;text-decoration:none;color:#ddd;font-weight:300}
+.sidebar a.active{background:#333;color:#fff;font-weight:700}
+.content{flex:1;margin-left:0;padding:28px;transition:margin-left .28s}
+.content.active{margin-left:240px}
+#menuBtn{position:fixed;left:12px;top:12px;background:#f0c14b;color:#000;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;z-index:1300}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;animation:fadeIn .5s ease}
+.card{background:#1b1b1b;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.6);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 28px rgba(0,0,0,.7)}
+.card h3{color:#f0c14b;margin-bottom:8px;font-weight:700}
+.card p.meta{color:#cfcfcf;font-size:.92rem;margin-bottom:8px}
+.card iframe{width:100%;height:360px;border-radius:8px;border:0;margin-top:8px;background:#000}
+.full-btn{display:inline-block;margin-top:8px;padding:8px 10px;background:#f0c14b;color:#000;border-radius:6px;text-decoration:none;font-weight:700}
+.footer{margin-top:26px;color:#a8a8a8;font-size:.95rem;padding-bottom:40px}
+.notice{background:#261616;color:#f8d7da;padding:10px;border-radius:8px;margin:12px 0;color:#fff}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:900px){.content.active{margin-left:0} .sidebar{left:-100%}.sidebar.active{left:0} #menuBtn{left:12px}}
